@@ -6,7 +6,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       ## Database authenticatable
       t.string :name,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
+      t.string :email
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -14,6 +14,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       ## Rememberable
       t.datetime :remember_created_at
 
+      
+     
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
@@ -32,8 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
       ## 名前を保存するカラム
-      t.string :email
-
+      t.text :name
+      t.text :introduction
 
       t.timestamps null: false
     end
