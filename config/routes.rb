@@ -6,10 +6,11 @@ Rails.application.routes.draw do
     
     
  
-    resources :users, only: [:new, :index, :show]
+    resources :users, only: [:index, :show, :edit, :update]
     
-    get 'users/index'
+    get 'users' => 'users#index'
+    get 'books' => 'books#index'
     
-    resources :books, only: [:new, :index, :show]
+    resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
