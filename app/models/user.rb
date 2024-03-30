@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_one_attached :profile_image  
-  belongs_to :book
+ 
   
 end
