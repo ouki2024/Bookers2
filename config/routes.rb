@@ -5,11 +5,14 @@ Rails.application.routes.draw do
     get 'homes/about' => 'homes#about', as: "about"
     
     
+    
  
     resources :users, only: [:index, :show, :edit, :update]
     
-    get 'users' => 'users#index'
+    get 'users/:id' => 'users#show'
     get 'books' => 'books#index'
+    
+    
     
     resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

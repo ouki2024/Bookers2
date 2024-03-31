@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     
     def create
         @book = Book.new(book.params)
-        @book.book_id = current_user.id
+        @book.user_id = current_user.id
         if @book.save
             redirect_to book_path
         else
