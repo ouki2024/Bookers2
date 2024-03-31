@@ -45,14 +45,17 @@
                 <table class ="table">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Image</th>
                             <th>Title</th>
-                            <th>Opinion</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
+                         <% @users.each do |user| %>
                         <tr>
-                            <td></td>
+                            <td><%= attachment_image_tag user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg"%></td>
+                            <td><%= user.name %></td>
+                            <td><%= link_to "Show", "/users/#{user.id}" %></td>
                         </tr>
                     </tbody>
                     

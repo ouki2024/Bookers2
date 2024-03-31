@@ -3,52 +3,28 @@
         <div class ="row">
             <div class ="col-md-3">
                 <h2>User info</h2>
-                <%= form_with model: @user do |f| %>
-                    <%= f.file_field :image, accept: "image/*" %>
-                   
-                
-                <table class ="table">
-                    <tbody>
-                        <tr>
-                            <th>name</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th>introduction</th>
-                            <th></th>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class ="row">
-                    <%= f.submit 'プロフィール編集画面' %>
-                <% end %>
-                </div>
-            
-                
+                    <%= render 'users/user', user: @user %>
                 <h2>New book</h2>
-                    <%= form_with model: @book do |f| %>
-                            <h4>Title</h4>
-                            <%= f.text_field :Title %>
-                            <h4>Opinion</h4>
-                            <%= f.text_area :Opinion %>
-                            
-                            <%= f.submit 'Create Book' %>
-    
-                    <% end %>
+                <%= render 'books/book', book: @newbook %>
             </div>
             
             <div class ="col-md-8">
                 <h2>Book detail</h2>
+                
                 <table class ="table">
 
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><%= attachment_image_tag @user, :profile_image, :fill, 90, 90, fallback: "no_image.jpg"%></td>
+                            <td><%= link_to @user.name, user_path(@user) %></td>
+                            <td><%= @book.title %></td>
+                            <td><%= @book.body %></td>
+                            <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"} %></td>
+                            
+                            <% if @book.user_id == current_user.id %>
+                                <td><%= link_to "Edit", edit_book_path(@book)%></td>
+                                <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"} %></td>
+                            <% end %>
                         </tr>
                     </tbody>
                     

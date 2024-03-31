@@ -3,54 +3,32 @@
         <div class ="row">
             <div class ="col-md-3">
                 <h2>User info</h2>
-                <%= form_with model: @user do |f| %>
-                    <%= f.file_field :image, accept: "image/*" %>
-                   
-                
-                <table class ="table">
-                    <tbody>
-                        <tr>
-                            <th>name</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <th>introduction</th>
-                            <th></th>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class ="row">
-                    <%= f.submit 'プロフィール編集画面' %>
-                <% end %>
-                </div>
-            
-                
+                <%= render 'users/user', user: @user %>
+        
                 <h2>New book</h2>
-                    <%= form_with model: @book do |f| %>
-                            <h4>Title</h4>
-                            <%= f.text_field :Title %>
-                            <h4>Opinion</h4>
-                            <%= f.text_area :Opinion %>
-                            
-                            <%= f.submit 'Create Book' %>
-    
-                    <% end %>
+                <%= render 'books/book', book: @book %>
             </div>
             
+            
             <div class ="col-md-8">
-                <h2>Books</h2>
+                <h2>Book detail</h2>
                 <table class ="table">
+                    <% @books.each do |book| %>
                     <thead>
                         <tr>
-                            <th></th>
                             <th>Title</th>
                             <th>Opinion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td>
+                            <%= link_to user_path(@user) do %>
+                            <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg"%>
+                            <% end %>
+                            </td>
+                            <td><%= link_to book.title, book_path(book.id) %></td>
+                            <td><%= book.body %></td>
                         </tr>
                     </tbody>
                     
