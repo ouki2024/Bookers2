@@ -16,10 +16,8 @@
       <div class ="container">
         <div class = "row">
             <span><%= link_to "Bookers", root_path %></span>
-            
           
-          
-      
+
             <% if user_signed_in? %>
               <li>
                 <%= link_to "Home", users_path %>
