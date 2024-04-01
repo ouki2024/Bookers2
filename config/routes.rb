@@ -7,11 +7,9 @@ Rails.application.routes.draw do
     
     
  
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :users
     
-    get 'users/:id' => 'users#show'
-    get 'books' => 'books#index'
-    
+   
     
     
     resources :books

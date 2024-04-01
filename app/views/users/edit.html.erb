@@ -1,7 +1,7 @@
 <h2>User info</h2>
 
 <%= form_with model: @user do |f| %>
-<%= render 'books/error', model: @user %>
+<%= render 'books/error', user: @user %>
 
   <div class="user-name">Name</div>
     <%= f.text_field :name %>

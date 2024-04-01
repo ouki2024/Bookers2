@@ -5,7 +5,7 @@
                 <h2>User info</h2>
                     <%= render 'users/user', user: @user %>
                 <h2>New book</h2>
-                <%= render 'books/book', book: @newbook %>
+                    <%= render 'books/book', book: @newbook %>
             </div>
             
             <div class ="col-md-8">
@@ -15,7 +15,7 @@
 
                     <tbody>
                         <tr>
-                            <td><%= attachment_image_tag @user, :profile_image, :fill, 90, 90, fallback: "no_image.jpg"%></td>
+                            <td><%= image_tag @user.get_profile_image(100,100) %></td>
                             <td><%= link_to @user.name, user_path(@user) %></td>
                             <td><%= @book.title %></td>
                             <td><%= @book.body %></td>
