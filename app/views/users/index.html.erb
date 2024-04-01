@@ -1,4 +1,4 @@
-<h1>一覧画面</h1>
+
 
 
     <div class ="container">
@@ -9,25 +9,26 @@
                   
                 <h2>New book</h2>
                     <%= render 'books/book', book: @book %>
-            
+            </div>
             <div class ="col-md-8">
                 <h2>Books</h2>
                 <table class ="table">
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>Title</th>
+                            <th>Name</th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                         <% @users.each do |user| %>
+                        <% @users.each do |user| %>
                         <tr>
                             <td><%= image_tag user.get_profile_image(100,100) %></td>
                             <td><%= user.name %></td>
                             <td><%= link_to "Show", "/users/#{user.id}" %></td>
-                        <% end %>
+                        
                         </tr>
+                        <% end %>
                     </tbody>
                     
                 </table>
