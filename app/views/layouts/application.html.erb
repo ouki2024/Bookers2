@@ -13,47 +13,47 @@
   </head>
 
   <body>
-    <header>
+    <body class="header">
       <div class="social"></div>
       <div class ="container">
         <div class = "row">
           
-        <nav class ="nav navbar-left">
-            <span><%= link_to "Bookers", root_path %></span>
-        </nav> 
-        <nav>
-          <ul class ="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <li>
-                <i class="fa-solid fa-house"><%= link_to "Home", user_path(current_user) %></i>
+          <nav class ="nav-bar-left">
+              <span><%= link_to "Bookers", root_path %></span>
+          </nav>
+          <nav>
+            <ul class ="nav_bar-right">
+              <% if user_signed_in? %>
+                <li>
+                  <i class="fa-solid fa-house"><%= link_to "Home", user_path(current_user) %></i>
                 
-              </li>
-              <li>
-                <i class="fa-solid fa-users"><%= link_to "Users", users_path %></i>
-              </li>
-              <li>
-                <i class="fa-solid fa-book-open"><%= link_to "Books", books_path %></i>
-              </li>
-              <li>
-                <i class="fa-solid fa-right-to-bracket"><%= link_to "Log out", destroy_user_session_path, method: :delete %></i>
-              </li>
+                </li>
+                <li>
+                  <i class="fa-solid fa-users"><%= link_to "Users", users_path %></i>
+                </li>
+                <li>
+                  <i class="fa-solid fa-book-open"><%= link_to "Books", books_path %></i>
+                </li>
+                <li>
+                  <i class="fa-solid fa-right-to-bracket"><%= link_to "Log out", destroy_user_session_path, method: :delete %></i>
+                </li>
               
-            <% else %>
-              <li>
-                <i class="fa-solid fa-house"><%= link_to "Home", root_path %></i>
-              </li>
-              <li>
-                <i class="fa-solid fa-paperclip"><%= link_to "About", about_path %></i>
-              </li>
-              <li>
-                <i class="fa-solid fa-user-plus"><%= link_to "Sign up", new_user_registration_path %></i>
-              </li>
-              <li>
-                <i class="fa-solid fa-right-to-bracket"><%= link_to "Log in", new_user_session_path %></i>
-              </li>
-            <% end %>
-          </ul>  
-        </nav>  
+              <% else %>
+                <li>
+                  <i class="fa-solid fa-house"><%= link_to "Home", root_path %></i>
+                </li>
+                <li>
+                  <i class="fa-solid fa-paperclip"><%= link_to "About", about_path %></i>
+                </li>
+                <li>
+                  <i class="fa-solid fa-user-plus"><%= link_to "Sign up", new_user_registration_path %></i>
+                </li>
+                <li>
+                  <i class="fa-solid fa-right-to-bracket"><%= link_to "Log in", new_user_session_path %></i>
+                </li>
+              <% end %>
+            </ul>  
+          </nav>  
             
         </div>
       </div>
