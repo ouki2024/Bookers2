@@ -16,6 +16,7 @@
                     
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Title</th>
                             <th>Opinion</th>
                             <th colspan = "3"></th>
@@ -31,8 +32,9 @@
                             </td>
                             <td><%= link_to book.title, book_path(book.id) %></td>
                             <td><%= book.body %></td>
-                        <% end %>
                         </tr>
+                        <% end %>
+                        
                     </tbody>
                     
                     
