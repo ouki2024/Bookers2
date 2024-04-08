@@ -296,7 +296,7 @@ Failures:
      [31m  expected `Book::ActiveRecord_Associations_CollectionProxy#count` to have changed by 1, but was changed by 0[0m
      [36m# ./spec/system/02_after_login_spec.rb:172:in `block (4 levels) in <main>'[0m
 
-Finished in 53.44 seconds (files took 1.5 seconds to load)
+Finished in 54.43 seconds (files took 1.46 seconds to load)
 [31m201 examples, 1 failure[0m
 
 Failed examples:
