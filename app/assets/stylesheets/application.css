@@ -23,6 +23,11 @@
 header {
     text-align: center
 }
+
+.navbar-dark {
+    color: #fff;
+}
+
 .nav-bar-left {
     display: inline-block;
     text-align: center;
