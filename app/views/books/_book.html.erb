@@ -1,17 +1,34 @@
 <%= form_with model: book do |f| %>
 
-  <div class="form-title row">
+  <div class="form-group">
     <%= f.label :Title %>
     <%= f.text_field :title, value:"" %>
   </div>
 
-  <div class="form-body row">
+  <div class="form-group">
   	<%= f.label :Opinion %>
     <%= f.text_area :body, value:"" %>
   </div>
 
   <div class="actions row">
     <%= f.submit 'Create Book'%>
-    
   </div>
+  <!--ーーーーーーーーーーーーーーここからが星レビュー機能ーーーーーーーーーーーーーーーー-->
+  <div class="form-group row" id="star">
+    <%= f.label :star,'評価 ', class:'col-md-3 col-form-label' %>
+    <%= f.hidden_field :star, id: :review_star %>
+  </div>
+
+  <script>
+　　　　$('#star').empty();
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+ 　 　　　scoreName: 'book[star]',
+    half: false,
+  });
+  </script>
+<!--ーーーーーーーーーーーーーーここまでが星レビュー機能ーーーーーーーーーーーーーーーー-->
+
 <% end %>
