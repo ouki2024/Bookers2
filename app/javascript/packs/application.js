@@ -12,6 +12,7 @@ import jQuery from "jquery"
 import "popper.js";
 import "bootstrap";
 
+
 import "../stylesheets/application";
 
 Rails.start()
@@ -21,7 +22,7 @@ ActiveStorage.start()
 // jQueryの設定
 window.$ = window.jQuery = require('jquery');
 // Ratyの設定
-import Raty from "raty.js"
+import Raty from "../stylesheets/raty.js";
 window.raty = function(elem,opt) {
   let raty =  new Raty(elem,opt)
   raty.init();
